@@ -4,16 +4,15 @@ package bank;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Client extends Thread{
-    private String name;
     private Account account;
     public final Integer[] values = {10,20,50,100};
 
     public Client(String name, Account account){
         super(name);
-        this.setAccount(account);
+        setAccount(account);
     }
 
-    public void execute(){
+    public void execute() throws InterruptedException {
         Integer action = ThreadLocalRandom.current().nextInt(0,2);      
         Integer value = values[ThreadLocalRandom.current().nextInt(0,4)];
         if(action ==  1){
@@ -23,6 +22,21 @@ public class Client extends Thread{
         }
     }
 
+    @Override
+    public void run() {
+        try{
+            while(true){
+            this.execute();
+            Thread.yield();
+        }
+    }
+            
+            catch (InterruptedException e) {
+               
+            }
+
+        
+    }
     public Account getAccount() {
         return account;
     }

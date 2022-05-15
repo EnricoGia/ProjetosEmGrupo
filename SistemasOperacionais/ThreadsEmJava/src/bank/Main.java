@@ -15,7 +15,10 @@ public class Main {
                 (Signal signal) -> {
                     System.out.println("Terminando a simulação...");
                     for (Client client : clients) {
+                        System.out.println("Cliente " + client.getName() + " encerrando..."
+                        );
                         client.interrupt();
+                        
                     }
                 });
         for (Client client : clients) {
