@@ -26,14 +26,14 @@ public class Client extends Thread{
     public void run() {
         try{
             while(true){
-            this.execute();
-            Thread.yield();
-        }
-    }
-            
-            catch (InterruptedException e) {
-               
+                this.execute();
+                Thread.yield();
             }
+        }
+            
+        catch (InterruptedException e) {
+                
+        }
 
         
     }
