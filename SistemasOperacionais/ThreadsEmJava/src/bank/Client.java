@@ -1,3 +1,11 @@
+/*
+T02-Barril
+    Guilherme de Campos RA: 20.00089-8
+    Leonardo Campos da Costa RA: 20.00786-8
+    Luis Guilherme de Souza Munhoz RA: 20.01937-8
+    Enrico Giannobile RA: 19.00610-0
+*/
+
 package bank;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -26,12 +34,11 @@ public class Client extends Thread {
         try {
             while (true) {
                 this.execute();
-                Thread.yield();
+                Thread.sleep(200);
             }
         }
 
         catch (InterruptedException e) {
-
         }
 
     }
