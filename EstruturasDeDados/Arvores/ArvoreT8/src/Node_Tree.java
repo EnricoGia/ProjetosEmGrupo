@@ -36,12 +36,6 @@ public class Node_Tree {
         }
     }
 
-    public boolean isInternal() {
-        if (this.firstChild != null)
-        return true;
-        else return false;
-    }
-
     public int dept() {
         if (this.parent == null)
             return 0;
