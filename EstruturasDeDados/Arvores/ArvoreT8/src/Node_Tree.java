@@ -23,6 +23,7 @@ public class Node_Tree {
         else
             System.out.println("Este nó é root, não tem pai...");
         } 
+
     public void imprimeFilhos() {
         if (this.firstChild == null)
             System.out.println("Node nao tem filhos....");
@@ -34,16 +35,19 @@ public class Node_Tree {
             }
         }
     }
+
     public boolean isInternal() {
         if (this.firstChild != null)
         return true;
         else return false;
     }
+
     public int dept() {
         if (this.parent == null)
             return 0;
         else return ( 1 + this.parent.dept() );
     }
+    
     public int height() {
         if (this.firstChild == null )
             return 0;
@@ -55,6 +59,7 @@ public class Node_Tree {
         }
             return 1 + h;
         }
+
     public void preorder() {
         System.out.println(this.item );
         Node_Tree trab = this.firstChild;
@@ -63,6 +68,7 @@ public class Node_Tree {
             trab = trab.next;
         }
     }
+
     public void posorder() {
         Node_Tree trab = this.firstChild;
         while (trab != null ) {
@@ -70,5 +76,34 @@ public class Node_Tree {
             trab = trab.next;
         }
         System.out.println(this.item );
+    }
+
+    public boolean EhInterno(){
+        return (this.firstChild != null ? true : false);
+    }
+
+    public void DobraFilhos() {
+        if (this.firstChild == null)
+            System.out.println("Node nao tem filhos....");
+        else {
+            
+            Node_Tree trab = this.firstChild;
+
+            while (trab != null ) {
+                trab.item *= 2;
+                trab = trab.next;
+            }
+        }
+    }
+
+    public void DobraPai(){
+
+        Node_Tree trab = this.parent();
+        
+        if(trab == null)
+            System.out.println("Sem Pai");
+        else
+            trab.item *= 2;
+        
     }
 }

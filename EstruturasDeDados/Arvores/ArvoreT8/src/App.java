@@ -1,3 +1,5 @@
+
+
 public class App {
     public static void main(String[] args) throws Exception {
         Tree tree = new Tree();
@@ -49,6 +51,15 @@ public class App {
         tree.root.preorder();
         System.out.println("\n\n");
         tree.root.posorder();
-        System.out.println ("");     
+        System.out.println ("");    
+        
+        System.out.println(tree.root.EhInterno());
+        System.out.println(no_8.EhInterno());
+
+        no_8.DobraFilhos();
+        no_8.imprimeFilhos();
+
+        no_2.DobraPai();
+        no_2.imprime_Parent();
     }
 }
