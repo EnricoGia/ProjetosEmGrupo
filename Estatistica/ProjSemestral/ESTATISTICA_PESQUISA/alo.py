@@ -17,16 +17,11 @@ fig = make_subplots(rows=nrows,
                     subplot_titles=['Id '+str(c) for c in dfp.columns])
 
 # add traces
-x = 1
-for i, col in enumerate(dfp.columns):
-    fig.add_trace(go.Scatter(x=dfp.index, y=dfp[col].values,
-                             name = 'Id '+str(col),
-                            mode = 'lines',
-                             ),
-                  row=i+1,
-                  col=1)
+
 
 fig.update_layout(height=nrows*500)
 fig.show()
 #teste de alterando o codigo
 print(1234+ "segredo")
+
+####################################===
