@@ -30,8 +30,8 @@ public class App {
         
         System.out.println(tree.verificaTamanho(tree.root));
         
-        
-
+        System.out.println("Maximum element is " + BinaryTree.findMax(tree.root));
+        System.out.println("Minimum element is " + BinaryTree.findMin(tree.root));
 
     }
 }

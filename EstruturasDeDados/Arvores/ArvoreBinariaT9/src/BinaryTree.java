@@ -38,6 +38,35 @@ public class BinaryTree {
         return 1 + verificaTamanho(root.left) + verificaTamanho(root.right);
     }
 
+    public static int findMax(BinaryTreeNode node) {
+        if (node == null)
+            return Integer.MIN_VALUE;
+ 
+        int res = node.item;
+        int lres = findMax(node.left);
+        int rres = findMax(node.right);
+ 
+        if (lres > res)
+            res = lres;
+        if (rres > res)
+            res = rres;
+        return res;
+    }
+
+    public static int findMin(BinaryTreeNode node) {
+    if (node == null)
+        return Integer.MAX_VALUE;
+ 
+    int res = node.item;
+    int lres = findMin(node.left);
+    int rres = findMin(node.right);
+ 
+    if (lres < res)
+        res = lres;
+    if (rres < res)
+        res = rres;
+    return res;
     
+    }
 
 }
