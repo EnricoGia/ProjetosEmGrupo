@@ -1,15 +1,10 @@
+import java.util.Objects;
 
 public class BinaryTree {
     BinaryTreeNode root;
-    int size;
-
-    public BinaryTree() {
-
-        this.root = null;
-        this.size = 0;
-    }
-
-    public void insert_root(int valor) {
+    Integer size;
+    
+    public void insert_root(Integer valor) {
 
         BinaryTreeNode node = new BinaryTreeNode(valor);
         this.root = node;
@@ -20,7 +15,7 @@ public class BinaryTree {
         return (this.root);
     }
 
-    public int size() {
+    public Integer size() {
         return this.size;
     }
 
@@ -31,21 +26,22 @@ public class BinaryTree {
             return false;
     }
 
-    public static int verificaTamanho(BinaryTreeNode root) {
+    public static Integer verificaTamanho(BinaryTreeNode root) {
         if (root == null) {
             return 0;
         }
         return 1 + verificaTamanho(root.left) + verificaTamanho(root.right);
     }
 
-    public static int findMax(BinaryTreeNode node) {
+    public static Integer findMax(BinaryTreeNode node) {
         if (node == null)
             return Integer.MIN_VALUE;
  
-        int res = node.item;
-        int lres = findMax(node.left);
-        int rres = findMax(node.right);
- 
+        Integer res = node.item;
+        Integer lres = findMax(node.left);
+        Integer rres = findMax(node.right);
+        if(res == null)
+            res = Integer.MIN_VALUE;
         if (lres > res)
             res = lres;
         if (rres > res)
@@ -53,14 +49,15 @@ public class BinaryTree {
         return res;
     }
 
-    public static int findMin(BinaryTreeNode node) {
+    public static Integer findMin(BinaryTreeNode node) {
     if (node == null)
         return Integer.MAX_VALUE;
  
-    int res = node.item;
-    int lres = findMin(node.left);
-    int rres = findMin(node.right);
- 
+    Integer res = node.item;
+    Integer lres = findMin(node.left);
+    Integer rres = findMin(node.right);
+    if(res == null)
+        res = Integer.MAX_VALUE;
     if (lres < res)
         res = lres;
     if (rres < res)
@@ -72,17 +69,70 @@ public class BinaryTree {
     public static double findAvg(BinaryTreeNode node) {
         if (node == null)
             return Integer.MAX_VALUE;
-     
-        double res = node.item;
+        Integer res = node.item;
+
         double lres = findAvg(node.left);
         double rres = findAvg(node.right);
-     
+        
+        if(res == null)
+            res = 0;
         if (lres < res)
-            res = lres;
+            res = (int) lres;
         if (rres < res)
-            res = rres;
+            res = (int) rres;
         soma += res;
-        return soma / (double)(verificaTamanho(node));
+        return (double)soma / (double)(verificaTamanho(node));
         }
 
+    public static Integer somaNull = 0;
+    public static Integer findNull(BinaryTreeNode node) {
+        if (node == null)
+            return Integer.MAX_VALUE;
+     
+        Integer res = node.item;
+        Integer lres = findNull(node.left);
+        Integer rres = findNull(node.right);
+     
+        if (res == null){
+            res = lres;
+            somaNull += 1;
+            
+        }
+        if (rres == null){
+            res = rres;
+            somaNull += 1;
+        }
+        
+        return somaNull;
+    }
+    static int findLeaves(BinaryTreeNode node)
+    {
+        if (node == null)
+            return 0;
+        if (node.left == null && node.right == null)
+            return 1;
+        else
+            return findLeaves(node.left) + findLeaves(node.right);
+    }
+    public int findHeight(BinaryTreeNode node){  
+
+        if(root == null) {  
+             System.out.println("Arvore vazia");  
+            return 0;  
+        }  
+        else {  
+            int leftHeight = 0, rightHeight = 0;  
+  
+            if(node.left != null)  
+                leftHeight = findHeight(node.left);  
+  
+            if(node.right != null)  
+                rightHeight = findHeight(node.right);  
+  
+           
+            int max = (leftHeight > rightHeight) ? leftHeight : rightHeight;  
+  
+            return (max + 1);  
+        }  
+     }  
 }

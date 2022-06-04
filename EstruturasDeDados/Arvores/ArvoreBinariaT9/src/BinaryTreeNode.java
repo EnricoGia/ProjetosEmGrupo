@@ -1,11 +1,16 @@
 public class BinaryTreeNode {
 
-    int item;
+    Integer item;
     BinaryTreeNode parent;
     BinaryTreeNode left;
     BinaryTreeNode right;
-
-    public BinaryTreeNode(int item) {
+    public BinaryTreeNode(){
+        this.item = null;
+        this.parent = null;
+        this.left = null;
+        this.right = null;
+    }
+    public BinaryTreeNode(Integer item) {
 
         this.item = item;
         this.parent = null;
@@ -70,7 +75,7 @@ public class BinaryTreeNode {
             this.right.binaryInorder();
     }
 
-    public void presente(int valor) {
+    public void presente(Integer valor) {
         if(this.item==valor)
             System.out.println("Valor achado! ("+valor+")");
 
