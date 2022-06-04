@@ -1,0 +1,14 @@
+Pessoas mais velhas jogam menos
+Quanto mais a pessoa sabe ingles mais provavel dela gostar de jogar videogame
+A maioria dos consumidores de jogos sao estudantes (e jovens segundo a linha 1)
+Homens jogam mais que mulheres (gamerxcringe)
+ - mais estudantes jogam
+ - mais jovens jogam
+ - mais velhos n_jogam
+ - ingles afeta se a pessoa vai jogar ou nao (melhor mais provavel de jogar) 
+
+Todos que jogam (assinantes ou nao) gostam das mesmas categorias de jogos sendo Acao/aventura,RPG, FPS,Estrategia,Simulacao os mais polulares
+Todos que jogam (assinantes ou nao) tem as mesmas preferencias para considerar quando compra um jogo sendo Qualidade e preço desconto as mais populares
+
+Devido ao pequeno data nao concluimos nada pela parte estrategia
+
