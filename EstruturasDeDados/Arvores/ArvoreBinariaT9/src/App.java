@@ -28,10 +28,10 @@ public class App {
         System.out.println("Valor 5 na arvore?");
         tree.root.presente(4);
         
-        System.out.println(tree.verificaTamanho(tree.root));
+        System.out.println(BinaryTree.verificaTamanho(tree.root));
         
-        System.out.println("Maximum element is " + BinaryTree.findMax(tree.root));
-        System.out.println("Minimum element is " + BinaryTree.findMin(tree.root));
-
+        System.out.println("Elemento maximo eh: " + BinaryTree.findMax(tree.root));
+        System.out.println("Elemento minimo eh: " + BinaryTree.findMin(tree.root));
+        System.out.println("Media dos elementos eh: " + BinaryTree.findAvg(tree.root));
     }
 }

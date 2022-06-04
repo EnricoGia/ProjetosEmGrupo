@@ -31,7 +31,7 @@ public class BinaryTree {
             return false;
     }
 
-    public int verificaTamanho(BinaryTreeNode root) {
+    public static int verificaTamanho(BinaryTreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -66,7 +66,23 @@ public class BinaryTree {
     if (rres < res)
         res = rres;
     return res;
-    
     }
+
+    public static float soma = 0;
+    public static double findAvg(BinaryTreeNode node) {
+        if (node == null)
+            return Integer.MAX_VALUE;
+     
+        double res = node.item;
+        double lres = findAvg(node.left);
+        double rres = findAvg(node.right);
+     
+        if (lres < res)
+            res = lres;
+        if (rres < res)
+            res = rres;
+        soma += res;
+        return soma / (double)(verificaTamanho(node));
+        }
 
 }
