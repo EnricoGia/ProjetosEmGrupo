@@ -1,4 +1,4 @@
-import java.util.Objects;
+
 
 public class BinaryTree {
     BinaryTreeNode root;
@@ -121,7 +121,7 @@ public class BinaryTree {
             return 0;  
         }  
         else {  
-            int leftHeight = 0, rightHeight = 0;  
+            int leftHeight = -1, rightHeight = -1;  
   
             if(node.left != null)  
                 leftHeight = findHeight(node.left);  
